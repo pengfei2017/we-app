@@ -1,0 +1,1170 @@
+
+<!--pages/category/index.wxml-->
+<scroll-view class="tabs" scroll-x="true" scroll-left="{{scrollLeft}}" scroll-with-animation="true">
+  <view class="tabs-item {{currentTab==0 ? 'active' : ''}}" data-tab="0" bindtap="setCurrentTab">点菜</view>
+  <view class="tabs-item {{currentTab==1 ? 'active' : ''}}" data-tab="1" bindtap="setCurrentTab">评价</view>
+  <view class="tabs-item {{currentTab==2 ? 'active' : ''}}" data-tab="2" bindtap="setCurrentTab">详情</view>
+  <view class="tabs-item {{currentTab==3 ? 'active' : ''}}" data-tab="3" bindtap="setCurrentTab">其他1</view>
+  <view class="tabs-item {{currentTab==4 ? 'active' : ''}}" data-tab="4" bindtap="setCurrentTab">其他2</view>
+  <view class="tabs-item {{currentTab==5 ? 'active' : ''}}" data-tab="5" bindtap="setCurrentTab">其他3</view>
+  <view class="tabs-item {{currentTab==6 ? 'active' : ''}}" data-tab="6" bindtap="setCurrentTab">其他4</view>
+  <view class="tabs-item {{currentTab==7 ? 'active' : ''}}" data-tab="7" bindtap="setCurrentTab">其他5</view>
+</scroll-view>
+<swiper class="tabs-content" current="{{currentTab}}" bindchange="changeTab">
+  <swiper-item class="tabs-content-item">
+    <view class="goods-content">
+      <scroll-view class="category-box" scroll-y="true" scroll-into-view="category-Box-item-{{categoryBoxScrollIntoView}}" bindscroll="doCategoryBoxScroll" style="height:100%;">
+        <view id="category-Box-item-0" class="category-item {{currentCategory==0?'active':''}}" data-category="0" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <image src="../../images/category-icon/zhuanchang.png"></image>
+            <text>专场</text>
+          </view>
+        </view>
+        <view id="category-Box-item-1" class="category-item {{currentCategory==1?'active':''}}" data-category="1" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食1</text>
+          </view>
+        </view>
+        <view id="category-Box-item-2" class="category-item {{currentCategory==2?'active':''}}" data-category="2" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食2</text>
+          </view>
+        </view>
+        <view id="category-Box-item-3" class="category-item {{currentCategory==3?'active':''}}" data-category="3" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食3</text>
+          </view>
+        </view>
+        <view id="category-Box-item-4" class="category-item {{currentCategory==4?'active':''}}" data-category="4" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食4</text>
+          </view>
+        </view>
+        <view id="category-Box-item-5" class="category-item {{currentCategory==5?'active':''}}" data-category="5" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食5</text>
+          </view>
+        </view>
+        <view id="category-Box-item-6" class="category-item {{currentCategory==6?'active':''}}" data-category="6" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食6</text>
+          </view>
+        </view>
+        <view id="category-Box-item-7" class="category-item {{currentCategory==7?'active':''}}" data-category="7" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食7</text>
+          </view>
+        </view>
+        <view id="category-Box-item-8" class="category-item {{currentCategory==8?'active':''}}" data-category="8" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食8</text>
+          </view>
+        </view>
+        <view id="category-Box-item-9" class="category-item {{currentCategory==9?'active':''}}" data-category="9" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食9</text>
+          </view>
+        </view>
+        <view id="category-Box-item-10" class="category-item {{currentCategory==10?'active':''}}" data-category="10" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食10</text>
+          </view>
+        </view>
+        <view id="category-Box-item-11" class="category-item {{currentCategory==11?'active':''}}" data-category="11" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食11</text>
+          </view>
+        </view>
+        <view id="category-Box-item-12" class="category-item {{currentCategory==12?'active':''}}" data-category="12" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食12</text>
+          </view>
+        </view>
+        <view id="category-Box-item-13" class="category-item {{currentCategory==13?'active':''}}" data-category="13" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食13</text>
+          </view>
+        </view>
+        <view id="category-Box-item-14" class="category-item {{currentCategory==14?'active':''}}" data-category="14" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食14</text>
+          </view>
+        </view>
+        <view id="category-Box-item-15" class="category-item {{currentCategory==15?'active':''}}" data-category="15" bindtap="switchCategory">
+          <view class="category-item-inner">
+            <text>主食15</text>
+          </view>
+        </view>
+      </scroll-view>
+      <scroll-view class="category-contents" scroll-y="true" scroll-into-view="category-contents-item-{{currentCategoryContent}}" scroll-with-animation="{{isScrollWithAnimation}}" bindscroll="doCategoryContentsScroll" bindscrolltolower="doCategoryContentsToLower"
+      lower-threshold="100" style="height:100%;">
+        <view id="category-contents-item-0" class="category-contents-item">
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-1" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==1?'fixed-title':''}}">主食1</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-2" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==2?'fixed-title':''}}">主食2</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-3" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==3?'fixed-title':''}}">主食3</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-4" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==4?'fixed-title':''}}">主食4</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-5" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==5?'fixed-title':''}}">主食5</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-6" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==6?'fixed-title':''}}">主食6</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-7" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==7?'fixed-title':''}}">主食7</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-8" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==8?'fixed-title':''}}">主食8</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-9" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==9?'fixed-title':''}}">主食9</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-10" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==10?'fixed-title':''}}">主食10</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-11" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==11?'fixed-title':''}}">主食11</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-12" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==12?'fixed-title':''}}">主食12</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-13" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==13?'fixed-title':''}}">主食13</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-14" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==14?'fixed-title':''}}">主食14</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view id="category-contents-item-15" class="category-contents-item">
+          <view class="goods-box-title">
+            <view class="{{currentCategoryTitle==15?'fixed-title':''}}">主食15</view>
+          </view>
+          <view class="goods-box">
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">油炸花生米</view>
+                <view class="goods-intro">我贯穿南北，就为与你相见</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">白切鸡</view>
+                <view class="goods-intro">正宗三黄鸡，色泽金黄，辅以角料，美味不用等</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥10</view>
+                  <view class="goods-select">选规格</view>
+                </view>
+              </view>
+            </view>
+            <view class="goods-item">
+              <image src="../../images/food.jpg"></image>
+              <view class="goods-info-box">
+                <view class="goods-title">凉拌土豆丝</view>
+                <view class="goods-likes">
+                  <view class="goods-likes-left">月售2</view>
+                  <view class="goods-likes-right">赞1</view>
+                </view>
+                <view class="goods-tools">
+                  <view class="goods-price">￥26</view>
+                  <view class="goods-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">评价内容</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">详情内容</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">其他内容1</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">其他内容2</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">其他内容3</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">其他内容4</view>
+  </swiper-item>
+  <swiper-item class="tabs-content-item">
+    <view class="content">其他内容5</view>
+  </swiper-item>
+</swiper>
+<view class="shopping-box">
+  <view class="cart-bth">
+    <image src="../../images/footer-icon/cart.png"></image>
+  </view>
+  <view class="cart-tips">另需配送费￥4</view>
+  <view class="pay-bth">15元起送</view>
+</view>
+<view animation="{{animationData}}" class="loading {{isLoaded?'hidden':''}}">数据正在加载中</view>

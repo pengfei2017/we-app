@@ -1,0 +1,293 @@
+/* pages/category/index.wxss */
+
+page, scroll-view, view {
+  box-sizing: border-box;
+  font-family: "微软雅黑";
+}
+
+page {
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  height: 100%;
+}
+
+/*选项卡的样式*/
+
+.tabs {
+  border-top: 2rpx solid #b3b3b3;
+  border-bottom: 2rpx solid #d8d8d8;
+  white-space: nowrap;
+  height: 91rpx;
+  background-color: #fff;
+  width: 100%;
+}
+
+.tabs-item {
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+  border-bottom: 6rpx solid transparent;
+  color: #999;
+}
+
+.tabs-item.active {
+  border-bottom: 6rpx solid #32b8ad;
+  color: #333;
+}
+
+/*选项卡内容区的样式*/
+
+.tabs-content {
+  flex: 1;
+}
+
+.goods-content {
+  display: flex;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.category-box {
+  width: 200rpx;
+  background-color: #f5f6f8;
+}
+
+.category-item {
+  width: 100%;
+}
+
+.category-item-inner {
+  margin: 0 auto;
+  width: 180rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120rpx;
+  border-bottom: 2rpx dashed #b3b3b3;
+}
+
+.category-item.active {
+  background-color: #fff;
+  border-top: 4rpx solid #f1f2f4;
+  border-bottom: 4rpx solid #f1f2f4;
+  margin-top: -4rpx;
+}
+
+.category-item.active .category-item-inner {
+  background-color: #fff;
+  border-bottom: 2rpx solid transparent;
+}
+
+.category-item.active text {
+  color: #06c1ae;
+}
+
+.category-item image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.category-item text {
+  font-size: 32rpx;
+  color: #999;
+}
+
+.category-item:last-of-type .category-item-inner {
+  border-bottom: none;
+}
+
+/*分类右边商品列表区图片*/
+
+.category-contents {
+  flex: 1;
+}
+
+.category-contents-item {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.goods-box-title {
+  flex: 100%;
+  height: 60rpx;
+}
+
+.goods-box-title view {
+  height: 60rpx;
+  line-height: 60rpx;
+  color: #333;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+}
+
+.fixed-title {
+  position: fixed;
+  left: 200rpx;
+  right: 0;
+  top: 0;
+  background-color: #f7f7f7;
+}
+
+.category-contents-item .goods-box {
+  flex: 100%;
+  background-color: #fff;
+  padding-left: 20rpx;
+}
+
+.goods-box .goods-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #fff;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #d8d8d8;
+}
+
+.goods-box .goods-item:last-of-type {
+  border-bottom: 2rpx solid transparent;
+}
+
+.goods-item image {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+
+.goods-item .goods-info-box {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-left: 20rpx;
+}
+
+.goods-info-box .goods-title {
+  color: #383838;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.goods-intro {
+  font-size: 26rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.goods-info-box .goods-likes {
+  display: flex;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  color: #999;
+}
+
+.goods-likes-right {
+  margin-left: 20rpx;
+}
+
+.goods-tools {
+  display: flex;
+  align-items: center;
+  margin-top: 6rpx;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+
+.goods-price {
+  color: #06c1ae;
+  margin-left: -6rpx;
+}
+
+.goods-add {
+  margin-right: 20rpx;
+  color: #fff;
+  background-color: #06c1ae;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 36rpx;
+}
+
+.goods-select {
+  margin-right: 20rpx;
+  color: #fff;
+  background-color: #06c1ae;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 25rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  padding: 0 20rpx;
+}
+
+/*页脚购物车的样式*/
+
+.shopping-box {
+  height: 100rpx;
+  background-color: #fff;
+  border-top: 2rpx solid #d8d8d8;
+  display: flex;
+}
+
+.cart-bth {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b4b4b4;
+  margin-left: 20rpx;
+  border-radius: 50%;
+  position: relative;
+  top: -20rpx;
+}
+
+.cart-bth image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.cart-tips {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-left: 30rpx;
+  color: #999;
+  font-size: 32rpx;
+}
+
+.pay-bth {
+  background-color: #999;
+  width: 240rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 32rpx;
+}
+
+/*初始化页面（获取每个子view的offsetTop）显示正在加载中提示*/
+
+.loading {
+  position: absolute;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.hidden {
+  display: none;
+}

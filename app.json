@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/category/index",
+    "pages/pay/index",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/flex/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "越努力，越幸运",
+    "navigationBarTextStyle": "black"
+  }
+}
